@@ -1038,6 +1038,14 @@
         <hasResponse rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp1"/>
     </owl:NamedIndividual>
 
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reclamation"/>
+        <content>je reclame sur2 .... </content>
+        <id>2</id>
+        <status>1</status>
+        <hasResponse rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp1"/>
+    </owl:NamedIndividual>
+
 
 
     <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent1 -->
