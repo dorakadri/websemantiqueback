@@ -1038,14 +1038,16 @@
         <hasResponse rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp1"/>
     </owl:NamedIndividual>
 
+
+   <!-- to addd -->
       <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec2">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reclamation"/>
-        <content>je reclame sur2 .... </content>
+        <content>je reclame sur le post sous le titre test </content>
         <id>2</id>
         <status>1</status>
         <hasResponse rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp1"/>
     </owl:NamedIndividual>
-
+   <!-- to addd -->
 
 
     <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent1 -->
@@ -1205,6 +1207,12 @@
         <content>we will figure this out dont you worry </content>
     </owl:NamedIndividual>
 
+    <!-- to addd -->
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reponse"/>
+        <content>we will figure this out dont you worry second response </content>
+    </owl:NamedIndividual>
+   <!-- to addd -->
 
 
     <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#sarra -->
