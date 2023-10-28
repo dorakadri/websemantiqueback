@@ -22,7 +22,7 @@ import com.example.demo.tools.JenaEngine;
 @RestController
 
 @RequestMapping("/troc")
-@CrossOrigin(origins = "http://localhost:3001")
+@CrossOrigin(origins = "http://127.0.0.1:5173")
 public class ReclamationController {
 
 
