@@ -30,12 +30,14 @@ public class PostandExchangeController {
 
         String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "SELECT ?post ?title ?description  ?date ?image ?advertisedByUser_id ?exchangerUser_id ?exchangeForEchangeobjectdesc  ?exchangeForExchangeobjectimage\n" +
+                "SELECT ?post ?title ?description ?id ?taken ?date ?image ?advertisedByUser_id ?exchangerUser_id ?exchangeForEchangeobjectdesc  ?exchangeForExchangeobjectimage\n" +
                 "WHERE {\n" +
                 "  ?post rdf:type ns:Object .\n" +
                 "  ?post ns:title ?title .\n" +
                 "  ?post ns:PostDescription ?description .\n" +
+                "  ?post ns:id ?id .\n" +
                 "  ?post ns:date ?date .\n" +
+                "  ?post ns:taken ?taken .\n" +
                 "  ?post ns:postimage ?image .\n" +
                 "  ?post  ns:postAdvertisedBy ?postAdvertisedBy .\n" +
                 "  ?postAdvertisedBy ns:user_id ?advertisedByUser_id .\n" +
@@ -50,24 +52,84 @@ public class PostandExchangeController {
 
         Model model = FileManager.get().loadModel(ontologyFile);
 
-        // Create a QueryExecution to execute the SPARQL query
+
         Query query = QueryFactory.create(sparqlQuery);
         QueryExecution qexec = QueryExecutionFactory.create(query, model);
 
-        // Execute the query and get the results
+
         ResultSet results = qexec.execSelect();
 
-        // Convert the ResultSet to JSON
+
         JSONArray resultArray = new JSONArray();
         while (results.hasNext()) {
             QuerySolution solution = results.nextSolution();
             JSONObject postObject = new JSONObject();
 
-            // Retrieve and add individual attributes to the JSON structure
             postObject.put("title", solution.get("title").toString());
             postObject.put("description", solution.get("description").toString());
             postObject.put("date", solution.get("date").toString());
+     postObject.put("id", solution.get("id").toString());
+            postObject.put("taken", solution.get("taken").toString());
+            postObject.put("image", solution.get("image").toString());
+            postObject.put("advertisedBy", solution.get("advertisedByUser_id").toString());
+            postObject.put("exchanger", solution.get("exchangerUser_id").toString());
+            postObject.put("exchangedescription", solution.get("exchangeForEchangeobjectdesc").toString());
+            postObject.put("exchangeimage", solution.get("exchangeForExchangeobjectimage").toString());
 
+            resultArray.put(postObject);
+        }
+
+        return resultArray.toString();
+    }
+    @GetMapping("/Posts/{id}")
+    public String getPostbyid(@PathVariable(value = "id") int id) {
+        String ontologyFile = "data/sem.owl";
+
+
+        String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "SELECT ?post ?title ?description ?id ?taken ?date ?image ?advertisedByUser_id ?exchangerUser_id ?exchangeForEchangeobjectdesc  ?exchangeForExchangeobjectimage\n" +
+                "WHERE {\n" +
+                "  ?post rdf:type ns:Object .\n" +
+                "  ?post ns:title ?title .\n" +
+                "  ?post ns:PostDescription ?description .\n" +
+                "  ?post ns:id ?id .\n" +
+                "  ?post ns:date ?date .\n" +
+                "  ?post ns:taken ?taken .\n" +
+                "  ?post ns:postimage ?image .\n" +
+                "  ?post  ns:postAdvertisedBy ?postAdvertisedBy .\n" +
+                "  ?postAdvertisedBy ns:user_id ?advertisedByUser_id .\n" +
+                "  ?post ns:has_exchanger ?has_exchanger .\n" +
+                "  ?has_exchanger ns:user_id ?exchangerUser_id .\n" +
+
+                "  ?post ns:exchangeFor ?exchangeFor .\n" +
+                "   ?exchangeFor (ns:echangeservicedescription|ns:echangeobjectdesc) ?exchangeForEchangeobjectdesc .\n" +
+                "  ?exchangeFor (ns:echangeserviceimage|ns:exchangeobjectimage) ?exchangeForExchangeobjectimage ." +
+
+                "FILTER ( ( ?id = '"+id+"' )  ) " +
+                "}";
+
+
+        Model model = FileManager.get().loadModel(ontologyFile);
+
+
+        Query query = QueryFactory.create(sparqlQuery);
+        QueryExecution qexec = QueryExecutionFactory.create(query, model);
+
+
+        ResultSet results = qexec.execSelect();
+
+
+        JSONArray resultArray = new JSONArray();
+        while (results.hasNext()) {
+            QuerySolution solution = results.nextSolution();
+            JSONObject postObject = new JSONObject();
+
+            postObject.put("title", solution.get("title").toString());
+            postObject.put("description", solution.get("description").toString());
+            postObject.put("date", solution.get("date").toString());
+            postObject.put("id", solution.get("id").toString());
+            postObject.put("taken", solution.get("taken").toString());
             postObject.put("image", solution.get("image").toString());
             postObject.put("advertisedBy", solution.get("advertisedByUser_id").toString());
             postObject.put("exchanger", solution.get("exchangerUser_id").toString());
@@ -87,7 +149,7 @@ public class PostandExchangeController {
 
         String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "SELECT ?SimpleUser ?birthdate ?phonenum  ?email ?lastname ?profileimage  ?user_id\n" +
+                "SELECT ?SimpleUser  ?birthdate ?phonenum  ?email ?lastname ?profileimage  ?user_id\n" +
                 "WHERE {\n" +
                 "  ?SimpleUser rdf:type ns:SimpleUser .\n" +
                 "  ?SimpleUser ns:birthdate ?birthdate .\n" +
@@ -104,20 +166,20 @@ public class PostandExchangeController {
 
         Model model = FileManager.get().loadModel(ontologyFile);
 
-        // Create a QueryExecution to execute the SPARQL query
+
         Query query = QueryFactory.create(sparqlQuery);
         QueryExecution qexec = QueryExecutionFactory.create(query, model);
 
-        // Execute the query and get the results
+
         ResultSet results = qexec.execSelect();
 
-        // Convert the ResultSet to JSON
+
         JSONArray resultArray = new JSONArray();
         while (results.hasNext()) {
             QuerySolution solution = results.nextSolution();
             JSONObject userObject = new JSONObject();
 
-            // Retrieve and add individual attributes to the JSON structure
+
             userObject.put("birthdate", solution.get("birthdate").toString());
             userObject.put("phonenum", solution.get("phonenum").toString());
             userObject.put("email", solution.get("email").toString());
@@ -140,10 +202,11 @@ public class PostandExchangeController {
 
         String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "SELECT ?post ?title ?description  ?date ?image ?advertisedByUser_id ?exchangerUser_id ?exchangeForEchangeobjectdesc  ?exchangeForExchangeobjectimage\n" +
+                "SELECT ?post ?title ?description  ?id ?date ?image ?advertisedByUser_id ?exchangerUser_id ?exchangeForEchangeobjectdesc  ?exchangeForExchangeobjectimage\n" +
                 "WHERE {\n" +
                 "  ?post rdf:type ns:Object .\n" +
                 "  ?post ns:title ?title .\n" +
+                "  ?post ns:id ?id .\n" +
                 "  ?post ns:PostDescription ?description .\n" +
                 "  ?post ns:date ?date .\n" +
                 "  ?post ns:postimage ?image .\n" +
@@ -161,24 +224,24 @@ public class PostandExchangeController {
 
         Model model = FileManager.get().loadModel(ontologyFile);
 
-        // Create a QueryExecution to execute the SPARQL query
+
         Query query = QueryFactory.create(sparqlQuery);
         QueryExecution qexec = QueryExecutionFactory.create(query, model);
 
-        // Execute the query and get the results
+
         ResultSet results = qexec.execSelect();
 
-        // Convert the ResultSet to JSON
+
         JSONArray resultArray = new JSONArray();
         while (results.hasNext()) {
             QuerySolution solution = results.nextSolution();
             JSONObject postObject = new JSONObject();
 
-            // Retrieve and add individual attributes to the JSON structure
+
             postObject.put("title", solution.get("title").toString());
             postObject.put("description", solution.get("description").toString());
             postObject.put("date", solution.get("date").toString());
-
+            postObject.put("id", solution.get("id").toString());
             postObject.put("image", solution.get("image").toString());
             postObject.put("advertisedBy", solution.get("advertisedByUser_id").toString());
             postObject.put("exchanger", solution.get("exchangerUser_id").toString());
