@@ -1080,10 +1080,24 @@
         <has_exchanger rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#sarra"/>
         <exchangeFor rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
     </owl:NamedIndividual>
+    <!-- to add -->
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce2">
+<rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object"/>
+<taken rdf:datatype="&xsd;boolean">true</taken>
+<postimage>https://ronixtools.com/en/blog/wp-content/uploads/2021/03/Learn-how-to-make-a-simple-wooden-table-at-home1.jpg</postimage>
+<PostDescription>i want to exchange this wooden chair
+</PostDescription>
+<date>27/10/2023</date>
+<id>3</id>
+<title>wooden chair
+</title>
+ <postAdvertisedBy rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#eya"/>
+        <has_exchanger rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#sarra"/>
+        <exchangeFor rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object1"/>
+</owl:NamedIndividual>
+<!-- to add -->
 
 
-
-    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment1">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment"/>
@@ -1227,8 +1241,12 @@
         <echangeserviceimage>https://f.maformation.fr/edito/sites/3/2021/10/baby-sitter.jpeg</echangeserviceimage>
     </owl:NamedIndividual>
 
-
-
+    <!-- to add  -->
+  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object"/>
+        <echangeobjectdesc>i will echange ur item vs a wooden chair</echangeobjectdesc>
+        <exchangeobjectimage>https://f.maformation.fr/edito/sites/3/2021/10/baby-sitter.jpeg</exchangeobjectimage>
+    </owl:NamedIndividual>
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1271,6 +1289,9 @@
         <rdf:type rdf:resource="&owl;AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce1"/>
+                 <!-- to add -->
+                       <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce2"/>
+              <!-- to add -->
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
         </owl:distinctMembers>
     </rdf:Description>
