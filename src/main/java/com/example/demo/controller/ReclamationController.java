@@ -70,18 +70,19 @@ public class ReclamationController {
 
         return resultArray.toString();
     }
-
     @GetMapping("/reponse")
     public String getReponses() {
         String ontologyFile = "data/sem.owl"; // Replace with the actual path to your ontology file
 
-        // Define the SPARQL query to retrieve data for individual reponses
+        // Define the SPARQL query to retrieve data for individual responses and their associated reclamations
         String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "SELECT ?reponse ?content\n" +
+                "SELECT ?reponse ?content ?reclamation ?reclamationContent\n" +
                 "WHERE {\n" +
                 "  ?reponse rdf:type ns:Reponse .\n" +
                 "  ?reponse ns:content ?content .\n" +
+                "  ?reponse ns:hasReclamation ?reclamation .\n" +  // Get the URI of the associated reclamation
+                "  ?reclamation ns:content ?reclamationContent .\n" +  // Get the content of the associated reclamation
                 "}";
 
         // Load the ontology model
@@ -94,20 +95,26 @@ public class ReclamationController {
         // Execute the query and get the results
         ResultSet results = qexec.execSelect();
 
-        // Convert the ResultSet to JSON
+        // Create a JSON array to store the results
         JSONArray resultArray = new JSONArray();
         while (results.hasNext()) {
             QuerySolution solution = results.nextSolution();
             JSONObject reponseObject = new JSONObject();
 
-            // Retrieve and add the "content" attribute to the JSON structure
+            // Retrieve and add individual attributes to the JSON structure
             reponseObject.put("content", solution.get("content").toString());
+
+            // Create a JSON object to store the reclamation content
+            JSONObject reclamationObject = new JSONObject();
+            reclamationObject.put("content", solution.get("reclamationContent").toString());
+
+            // Add the reclamation object to the response object
+            reponseObject.put("reclamation", reclamationObject);
 
             resultArray.put(reponseObject);
         }
 
         return resultArray.toString();
     }
-
 
 }
