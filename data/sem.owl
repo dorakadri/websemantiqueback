@@ -1020,10 +1020,12 @@
 
 
 
-    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object1 -->
+    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object2 -->
 
-    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object1">
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object2">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object"/>
+        <echangeobjectdesc>iwant to echange with a set of mouse and keyboard gamer</echangeobjectdesc>
+        <exchangeobjectimage>https://m.media-amazon.com/images/I/71aARXewm6L.jpg</exchangeobjectimage>
     </owl:NamedIndividual>
 
 
@@ -1070,9 +1072,9 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object"/>
         <taken rdf:datatype="&xsd;boolean">false</taken>
         <postimage>https://ronixtools.com/en/blog/wp-content/uploads/2021/03/Learn-how-to-make-a-simple-wooden-table-at-home1.jpg</postimage>
+        <date>16/10/2023</date>
         <PostDescription>i want to exchange this wooden table
 </PostDescription>
-        <date>16/10/2023</date>
         <id>2</id>
         <title>wooden table
 </title>
@@ -1080,24 +1082,48 @@
         <has_exchanger rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#sarra"/>
         <exchangeFor rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
     </owl:NamedIndividual>
-    <!-- to add -->
-<owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce2">
-<rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object"/>
-<taken rdf:datatype="&xsd;boolean">true</taken>
-<postimage>https://ronixtools.com/en/blog/wp-content/uploads/2021/03/Learn-how-to-make-a-simple-wooden-table-at-home1.jpg</postimage>
-<PostDescription>i want to exchange this wooden chair
-</PostDescription>
-<date>27/10/2023</date>
-<id>3</id>
-<title>wooden chair
+
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object"/>
+        <taken rdf:datatype="&xsd;boolean">true</taken>
+        <title>wooden chair
 </title>
- <postAdvertisedBy rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#eya"/>
-        <has_exchanger rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#sarra"/>
+        <id>3</id>
+        <date>27/10/2023</date>
+        <PostDescription>i want to exchange this wooden chair
+</PostDescription>
+        <postimage>https://ronixtools.com/en/blog/wp-content/uploads/2021/03/Learn-how-to-make-a-simple-wooden-table-at-home1.jpg</postimage>
+        <postAdvertisedBy rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#eya"/>
         <exchangeFor rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object1"/>
-</owl:NamedIndividual>
-<!-- to add -->
+        <has_exchanger rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#sarra"/>
+    </owl:NamedIndividual>
 
 
+
+    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object"/>
+        <taken rdf:datatype="&xsd;boolean">false</taken>
+        <PostDescription>i want to exchange this pc
+</PostDescription>
+        <date>29/10/2023</date>
+        <title>pc lenovo
+</title>
+        <id>4</id>
+        <postimage>https://ronixtools.com/en/blog/wp-content/uploads/2021/03/Learn-how-to-make-a-simple-wooden-table-at-home1.jpg</postimage>
+        <exchangeFor rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object2"/>
+        <has_exchanger rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#eya"/>
+        <postAdvertisedBy rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#fedi"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment1">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment"/>
@@ -1171,6 +1197,24 @@
 
 
 
+    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#fedi -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#fedi">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#SimpleUser"/>
+        <role>SIMPLE_USER</role>
+        <profileimage>sarra.png
+</profileimage>
+        <lastname>fedi rouatbi</lastname>
+        <password>123456fedi</password>
+        <email>fedi@esprit.tn</email>
+        <status>1</status>
+        <birthdate>17-10-1997</birthdate>
+        <user_id>5</user_id>
+        <phonenum>240565345</phonenum>
+    </owl:NamedIndividual>
+
+
+
     <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#lotfi -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#lotfi">
@@ -1186,6 +1230,16 @@
         <lastname>louiz</lastname>
         <Owns_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#A1"/>
         <post_on_forum rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form"/>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object"/>
+        <echangeobjectdesc>i will echange ur item vs a wooden chair</echangeobjectdesc>
+        <exchangeobjectimage>https://f.maformation.fr/edito/sites/3/2021/10/baby-sitter.jpeg</exchangeobjectimage>
     </owl:NamedIndividual>
 
 
@@ -1241,12 +1295,8 @@
         <echangeserviceimage>https://f.maformation.fr/edito/sites/3/2021/10/baby-sitter.jpeg</echangeserviceimage>
     </owl:NamedIndividual>
 
-    <!-- to add  -->
-  <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object"/>
-        <echangeobjectdesc>i will echange ur item vs a wooden chair</echangeobjectdesc>
-        <exchangeobjectimage>https://f.maformation.fr/edito/sites/3/2021/10/baby-sitter.jpeg</exchangeobjectimage>
-    </owl:NamedIndividual>
+
+
     <!--
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -1274,13 +1324,6 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object1"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
-        </owl:distinctMembers>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment1"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment2"/>
         </owl:distinctMembers>
@@ -1288,10 +1331,30 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object1"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#object1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce1"/>
-                 <!-- to add -->
-                       <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce2"/>
-              <!-- to add -->
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce2"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object2"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
         </owl:distinctMembers>
     </rdf:Description>
