@@ -1044,7 +1044,7 @@
             <Association_status>1</Association_status>
             <phonenum>12345678</phonenum>
             <Association_name>Association Tunisienne de Soutien aux Minorités</Association_name>
-            <belongs_to_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Yamina"/>
+            <belongs_to_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#emna"/>
         </owl:NamedIndividual>
 
 
@@ -1379,7 +1379,7 @@
 
 
 
-        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Yosri">
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#yossri">
                 <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AssociationOwner"/>
                 <role>AssociationOwner</role>
                 <birthdate>03-11-1994</birthdate>
@@ -1388,24 +1388,24 @@
                 <profileimage>https://th.bing.com/th/id/OIP.hCfHyL8u8XAbreXuaiTMQgHaHZ?w=194</profileimage>
                 <password>123456</password>
                 <email>yossrigharbi@esprit.tn</email>
-                <lastname>gharbi</lastname>
+                <lastname>yossri</lastname>
                 <Owns_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#A2"/>
                 <post_on_forum rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form"/>
             </owl:NamedIndividual>
 
-                <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#yamina">
-                            <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AssociationOwner"/>
-                            <role>AssociationOwner</role>
-                            <birthdate>03-11-1994</birthdate>
-                            <owner_id>3</owner_id>
-                            <phonenum>52456852</phonenum>
-                            <profileimage>https://th.bing.com/th/id/OIP.hCfHyL8u8XAbreXuaiTMQgHaHZ?w=194</profileimage>
-                            <password>123456</password>
-                            <email>yaminathabet@gmail.com</email>
-                            <lastname>thabet</lastname>
-                            <Owns_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#A3"/>
-                            <post_on_forum rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form"/>
-                        </owl:NamedIndividual>
+            <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#emna">
+            <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AssociationOwner"/>
+            <role>AssociationOwner</role>
+            <birthdate>03-11-1994</birthdate>
+            <owner_id>3</owner_id>
+            <phonenum>52456852</phonenum>
+            <profileimage>https://th.bing.com/th/id/OIP.hCfHyL8u8XAbreXuaiTMQgHaHZ?w=194</profileimage>
+            <password>123456</password>
+            <email>emna@esprit.tn</email>
+            <lastname>emna</lastname>
+            <Owns_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#A3"/>
+            <post_on_forum rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form"/>
+        </owl:NamedIndividual>
 
 
 
