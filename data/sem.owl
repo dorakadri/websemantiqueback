@@ -1066,6 +1066,22 @@
         <receivesDonation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#donation1"/>
     </owl:NamedIndividual>
 
+    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#CharityEvent2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#CharityEvent2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#CharityEvents"/>
+        <Target_Fundraising_Goal>1500.000</Target_Fundraising_Goal>
+        <Event_Description>we are collecting funds for abondoned elders </Event_Description>
+        <Participants>sarra,eya</Participants>
+        <Organizer>lotfi
+
+</Organizer>
+        <Event_Date>19/10/2023</Event_Date>
+        <Donations_Received>8</Donations_Received>
+        <Event_Name>all for our elders
+</Event_Name>
+        <receivesDonation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#donation2"/>
+    </owl:NamedIndividual>
 
 
     <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Event -->
@@ -1297,6 +1313,15 @@
         <Donation_Date>16/10/2023</Donation_Date>
         <note>to all our children with love </note>
     </owl:NamedIndividual>
+      <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#donation2 -->
+
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#donation2">
+            <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#donation"/>
+            <Donation_Amount>100.000</Donation_Amount>
+            <Donor>eya</Donor>
+            <Donation_Date>19/10/2023</Donation_Date>
+            <note>to all our elders with love </note>
+        </owl:NamedIndividual>
 
 
 
@@ -1339,6 +1364,7 @@
         <particiapate_to rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent2"/>
         <create_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent3"/>
         <makesDonation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#donation1"/>
+             <makesDonation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#donation2"/>
     </owl:NamedIndividual>
 
 
