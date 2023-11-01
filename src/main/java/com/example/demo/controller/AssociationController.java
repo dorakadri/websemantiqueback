@@ -5,10 +5,9 @@ import org.apache.jena.rdf.model.Model;
 import org.apache.jena.util.FileManager;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/troc")
@@ -124,6 +123,57 @@ public class AssociationController {
         }
         return  resultArray.toString();
 
+    }
+
+    @GetMapping("/AssociationOwnerby/{belongs_to_an}")
+    public ResponseEntity<String> getAssociationOwnerInfoByAssociation(@PathVariable("belongs_to_an") String belongs_to_an) {
+        String ontologyFile = "data/sem.owl"; // Replace with the actual path to your ontology file
+        String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
+                "SELECT ?association ?Associationdescription ?id ?Association_status ?email ?profileimage ?phonenum ?Association_name \n" +
+                "WHERE {\n" +
+                "    ?association ns:belongs_to_an ns:" + belongs_to_an + " .\n" +
+                "    ?association ns:id ?id .\n" +
+                "    ?association ns:Associationdescription ?Associationdescription .\n" +
+                "    ?association ns:Association_status ?Association_status .\n" +
+                "    ?association ns:profileimage ?profileimage .\n" +
+                "    ?association ns:email ?email .\n" +
+                "    ?association ns:phonenum ?phonenum .\n" +
+                "    ?association ns:Association_name ?Association_name .\n" +
+                "}\n";
+
+        Model model = FileManager.get().loadModel(ontologyFile);
+        Query query = QueryFactory.create(sparqlQuery);
+        QueryExecution qexec = QueryExecutionFactory.create(query, model);
+
+        try {
+            ResultSet results = qexec.execSelect();
+            JSONArray resultArray = new JSONArray();
+
+            while (results.hasNext()) {
+                QuerySolution solution = results.nextSolution();
+                JSONObject AssociationObject = new JSONObject();
+                AssociationObject.put("id", solution.get("id").toString());
+                AssociationObject.put("Associationdescription", solution.get("Associationdescription").toString());
+                AssociationObject.put("Association_status", solution.get("Association_status").toString());
+                AssociationObject.put("email", solution.get("email").toString());
+                AssociationObject.put("profileimage", solution.get("profileimage").toString());
+                AssociationObject.put("phonenum", solution.get("phonenum").toString());
+                AssociationObject.put("Association_name", solution.get("Association_name").toString());
+
+                resultArray.put(AssociationObject);
+            }
+
+            if (resultArray.isEmpty()) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No associations found for the provided parameter");
+            }
+
+            return ResponseEntity.ok(resultArray.toString());
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred");
+        } finally {
+            // Make sure to close resources (e.g., QueryExecution)
+            qexec.close();
+        }
     }
 
 

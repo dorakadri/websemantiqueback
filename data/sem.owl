@@ -1197,8 +1197,7 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AssociationOwner"/>
         <role>AssociationOwner</role>
         <birthdate>03-10-1993</birthdate>
-        <owner_id>1
-</owner_id>
+        <owner_id>1</owner_id>
         <phonenum>25649668</phonenum>
         <profileimage>https://th.bing.com/th/id/OIP.hCfHyL8u8XAbreXuaiTMQgHaHZ?w=194</profileimage>
         <password>123456</password>
@@ -1214,8 +1213,7 @@
                 <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AssociationOwner"/>
                 <role>AssociationOwner</role>
                 <birthdate>03-11-1994</birthdate>
-                <owner_id>2
-        </owner_id>
+                <owner_id>2</owner_id>
                 <phonenum>52456852</phonenum>
                 <profileimage>https://th.bing.com/th/id/OIP.hCfHyL8u8XAbreXuaiTMQgHaHZ?w=194</profileimage>
                 <password>123456</password>
@@ -1229,8 +1227,7 @@
                             <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AssociationOwner"/>
                             <role>AssociationOwner</role>
                             <birthdate>03-11-1994</birthdate>
-                            <owner_id>2
-                    </owner_id>
+                            <owner_id>3</owner_id>
                             <phonenum>52456852</phonenum>
                             <profileimage>https://th.bing.com/th/id/OIP.hCfHyL8u8XAbreXuaiTMQgHaHZ?w=194</profileimage>
                             <password>123456</password>
