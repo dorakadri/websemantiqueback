@@ -1005,13 +1005,47 @@
         <Associationdescription>association aide enfant</Associationdescription>
         <id>1</id>
         <email>a1@gmail.com</email>
-        <profileimage>logoa1.png</profileimage>
+        <profileimage>https://jamaity.org/wp-content/themes/wp-jamaity-v2/static/img/defaults/jamaity_default_1024x512.jpg</profileimage>
         <Association_adress>10 rue hassen nourri </Association_adress>
         <Association_status>0</Association_status>
         <phonenum>25649668</phonenum>
-        <Association_name>association enfant </Association_name>
+        <Association_name>association enfant</Association_name>
         <belongs_to_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#lotfi"/>
     </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#A2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Association"/>
+        <Associationdescription>L‟association de bienfaisance « Atta3aouen » est une association caritative d’aide et de bienfaisance, créée officiellement par sa publication au journal officiel de la république Tunisienne en date du 4 Septembre 2010. Son siège social étant basé à Tunis, aux Berges du Lac, elle ambitionne de rayonner sur toute la Tunisie à travers ses sections: Ben Arous, Sousse, Mahdia et Tunis-Nord et des représentants dans les régions de Manouba, Bizerte, Sousse, Gabes, Sidi Bouzid, Tataouine, Mahdia, Tunis Nord, Gafsa. Elle a déjà réussi à installer une antenne en France « Les ponts de l‟Entraide » et bientôt une nouvelle antenne sera installée au Canada. L‟association compte actuellement près de 1200 membres et plus de 27000 fans sur sa page Facebook créée fin Octobre 2010.</Associationdescription>
+        <id>2</id>
+        <email>a2@gmail.com</email>
+        <profileimage>https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR4iLoVtLU0ibebZBts0MO8Ow5v7WFp3bSk3wWqW-QXczO6_LbSpp5hyPLxSk3Sc4b1xg</profileimage>
+        <Association_adress>20 rue de la paix</Association_adress>
+        <Association_status>1</Association_status>
+        <phonenum>12345678</phonenum>
+        <Association_name>Ataawen charity</Association_name>
+        <belongs_to_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#yossri"/>
+    </owl:NamedIndividual>
+
+     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#A3">
+            <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Association"/>
+            <Associationdescription>ATSM est une association non gouvernementale à but non lucratif, non partisane, autonome et plurielle.
+                                    ATSM s’engage à :
+                                    – Défendre par les moyens autorisés par la loi les droits légitimes des minorités.
+                                    – Développer et enraciner les valeurs de la diversité dans la société afin que l’existence et l’apport de ces groupes sociaux soient reconnus par la société.
+                                    – Faire du lobbying auprès de la classe politique pour une meilleure protection et représentation de ces groupes sociaux spécifiques.
+                                    – Défendre les minorités des différents types religieux, culturel, ethnique, sexuelle, physique, social …
+                                    – Organiser des actions de terrain pour apporter un appui actif à ces groupes.
+                                    -Encrer la diversité de l’apport historique dans le système éducatif aussi que par le biais du vecteur médiatique.
+                                    – Démocratie et participation.</Associationdescription>
+            <id>3</id>
+            <email>a3@gmail.com</email>
+            <profileimage>https://jamaity.org/wp-content/uploads/2014/05/10432445_876838935666509_884709506_n.jpg</profileimage>
+            <Association_adress>tunis</Association_adress>
+            <Association_status>1</Association_status>
+            <phonenum>12345678</phonenum>
+            <Association_name>Association Tunisienne de Soutien aux Minorités</Association_name>
+            <belongs_to_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Yamina"/>
+        </owl:NamedIndividual>
 
 
 
@@ -1333,16 +1367,45 @@
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AssociationOwner"/>
         <role>AssociationOwner</role>
         <birthdate>03-10-1993</birthdate>
-        <owner_id>1
-</owner_id>
+        <owner_id>1</owner_id>
         <phonenum>25649668</phonenum>
-        <profileimage>lotfi.png</profileimage>
+        <profileimage>https://th.bing.com/th/id/OIP.hCfHyL8u8XAbreXuaiTMQgHaHZ?w=194</profileimage>
         <password>123456</password>
         <email>lotfi@esprit.tn</email>
         <lastname>louiz</lastname>
         <Owns_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#A1"/>
         <post_on_forum rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form"/>
     </owl:NamedIndividual>
+
+
+
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Yosri">
+                <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AssociationOwner"/>
+                <role>AssociationOwner</role>
+                <birthdate>03-11-1994</birthdate>
+                <owner_id>2</owner_id>
+                <phonenum>52456852</phonenum>
+                <profileimage>https://th.bing.com/th/id/OIP.hCfHyL8u8XAbreXuaiTMQgHaHZ?w=194</profileimage>
+                <password>123456</password>
+                <email>yossrigharbi@esprit.tn</email>
+                <lastname>gharbi</lastname>
+                <Owns_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#A2"/>
+                <post_on_forum rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form"/>
+            </owl:NamedIndividual>
+
+                <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#yamina">
+                            <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AssociationOwner"/>
+                            <role>AssociationOwner</role>
+                            <birthdate>03-11-1994</birthdate>
+                            <owner_id>3</owner_id>
+                            <phonenum>52456852</phonenum>
+                            <profileimage>https://th.bing.com/th/id/OIP.hCfHyL8u8XAbreXuaiTMQgHaHZ?w=194</profileimage>
+                            <password>123456</password>
+                            <email>yaminathabet@gmail.com</email>
+                            <lastname>thabet</lastname>
+                            <Owns_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#A3"/>
+                            <post_on_forum rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form"/>
+                        </owl:NamedIndividual>
 
 
 
