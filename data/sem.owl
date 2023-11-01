@@ -1457,6 +1457,15 @@
         <isCommenton rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form"/>
     </owl:NamedIndividual>
 
+<owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form2">
+    <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Forumpost"/>
+    <PostDescription>i was wondering if we make an event how much will be here </PostDescription>
+    <postimage>https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/800px-Question_mark_%28black%29.svg.png</postimage>
+    <title>lets collect</title>
+    <id>5</id>
+    <hasComment rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment1"/>
+    <isCommenton rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form"/>
+</owl:NamedIndividual>
 
 
 
