@@ -108,14 +108,14 @@ public class DonationController {
 
     @GetMapping("/donationsByAmount")
     public String getDonationsByAmount(@RequestParam("amount") float minAmount) {
-        String ontologyFile = "data/sem.owl"; // Remplacez par le chemin réel de votre fichier d'ontologie
+        String ontologyFile = "data/sem.owl";
         String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
-                "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" +  // Ajoutez la déclaration du préfixe xsd
+                "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
                 "SELECT ?donation ?Donation_Amount ?Donor ?Donation_Date ?note\n" +
                 "WHERE {\n" +
                 "  ?donation rdf:type ns:donation .\n" +
-                "  ?donation ns:Donation_Amount ?Donation_AmountStr .\n" +  // Utilisez une variable différente pour la valeur de chaîne
+                "  ?donation ns:Donation_Amount ?Donation_AmountStr .\n" +
                 "  BIND (xsd:float(?Donation_AmountStr) AS ?Donation_Amount) .\n" +
                 "  ?donation ns:Donor ?Donor .\n" +
                 "  ?donation ns:note ?note .\n" +

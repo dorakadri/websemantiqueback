@@ -1329,7 +1329,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#dorra">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Admin"/>
-        <profileimage>dorra.png
+        <profileimage>https://1fid.com/wp-content/uploads/2022/07/girl-anime-wallaper-2.jpg
 </profileimage>
         <status>1
 </status>
@@ -1353,7 +1353,7 @@
         <email>eya@esprit.tn</email>
         <status>1</status>
         <lastname>khechine</lastname>
-        <profileimage>eya.png</profileimage>
+        <profileimage>https://1fid.com/wp-content/uploads/2022/07/girl-anime-wallaper-25.jpg</profileimage>
         <birthdate>20-05-2000</birthdate>
         <user_id>3</user_id>
         <role>SIMPLE_USER</role>
@@ -1374,7 +1374,7 @@
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#fedi">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#SimpleUser"/>
         <role>SIMPLE_USER</role>
-        <profileimage>sarra.png
+        <profileimage>https://1fid.com/wp-content/uploads/2022/06/profile-picture-image-27.jpg
 </profileimage>
         <lastname>fedi rouatbi</lastname>
         <password>123456fedi</password>
@@ -1460,7 +1460,7 @@
 <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form2">
     <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Forumpost"/>
     <PostDescription>i was wondering if we make an event how much will be here </PostDescription>
-    <postimage>https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Question_mark_%28black%29.svg/800px-Question_mark_%28black%29.svg.png</postimage>
+    <postimage>https://www.adobe.com/content/dam/www/us/en/events/overview-page/eventshub_evergreen_opengraph_1200x630_2x.jpg</postimage>
     <title>lets collect</title>
     <id>5</id>
     <hasComment rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment1"/>
@@ -1527,7 +1527,7 @@
         <password>123456sarra</password>
         <role>SIMPLE_USER</role>
         <lastname>harguem</lastname>
-        <profileimage>sarra.png
+        <profileimage>https://i.pinimg.com/280x280_RS/7f/da/34/7fda3417fb0559d2d5aec4b3253d7d56.jpg
 </profileimage>
         <create_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent1"/>
         <has_transaction rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#eya"/>
