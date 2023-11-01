@@ -126,6 +126,14 @@
         <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reponse"/>
     </owl:ObjectProperty>
 
+    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#hasReclamation -->
+   <!--to add -->
+       <owl:ObjectProperty rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#hasReclamation">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reponse"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reclamation"/>
+    </owl:ObjectProperty>
+   <!--to add -->
 
 
     <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#has_claims -->
@@ -700,6 +708,7 @@
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AnnoncePost"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Post"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Postevent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reclamation"/>
         <rdfs:range rdf:resource="&xsd;string"/>
     </owl:DatatypeProperty>
 
@@ -903,7 +912,18 @@
             </owl:Restriction>
         </owl:equivalentClass>
     </owl:Class>
-
+     <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reponse -->
+          <!--to add -->
+    <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reponse">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#hasReclamation"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reclamation"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+   <!--to add -->
 
 
     <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvents -->
@@ -1033,15 +1053,66 @@
     <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec1">
-        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reclamation"/>
-        <content>je reclame sur .... </content>
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#PostsClaims"/>
+         <title> titre1 </title>
+        <content> c'est ma premiere reclamation sur le post annonce  wooden table </content>
         <id>1</id>
-        <status>0</status>
+        <status>encours</status>
         <hasResponse rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp1"/>
     </owl:NamedIndividual>
 
 
+   <!-- to addd -->
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#PostsClaims"/>
+        <title> titre2 </title>
+        <content> deuxiéme reclamation sur le post de l'annonce .... </content>
+        <id>2</id>
+        <status>traité</status>
+        <hasResponse rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp2"/>
+    </owl:NamedIndividual>
+   <!-- to addd -->
 
+     <!-- to addd -->
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Exchangesclaims"/>
+        <title> titre3 </title>
+        <content> troisième  reclamation sur l'echange de .... </content>
+        <id>3</id>
+        <status>traité</status>
+        <hasResponse rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp3"/>
+    </owl:NamedIndividual>
+   <!-- to add -->
+    <!-- to addd -->
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Exchangesclaims"/>
+        <title> titre4 </title>
+        <content> quatrième  reclamation sur l'echange de la table ....</content>
+        <id>4</id>
+        <status>encours</status>
+        <hasResponse rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp4"/>
+    </owl:NamedIndividual>
+   <!-- to add -->
+   <!-- to addd -->
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Exchangesclaims"/>
+        <title> titre5 </title>
+        <content> cinquiéme  reclamation sur l'echange de wooden table </content>
+        <id>5</id>
+        <status>encours</status>
+        <hasResponse rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp5"/>
+    </owl:NamedIndividual>
+   <!-- to add -->
+   <!-- to addd -->
+      <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#PostsClaims"/>
+        <title> titre6 </title>
+        <content> sixème reclamation sur l'annonce de post woodden table  </content>
+        <id>6</id>
+        <status>traité</status>
+        <hasResponse rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp6"/>
+    </owl:NamedIndividual>
+   <!-- to addd -->
     <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent1 -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent1">
@@ -1262,10 +1333,47 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp1">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reponse"/>
-        <content>we will figure this out dont you worry </content>
+        <content> 1ere réclamation en cours de traitement d'accord </content>
+        <hasReclamation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec1"/>
+        
     </owl:NamedIndividual>
 
-
+    <!-- to addd -->
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reponse"/>
+        <content> deuxième réclamation traité d'accord  </content>
+    <hasReclamation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec2"/>
+    </owl:NamedIndividual>
+   <!-- to addd -->
+     <!-- to addd -->
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reponse"/>
+        <content> troisiéme réclamation traité d'accord  </content>
+    <hasReclamation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec3"/>
+    </owl:NamedIndividual>
+   <!-- to addd -->
+     <!-- to addd -->
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reponse"/>
+        <content> quatrième réclamation en cours de traitement  </content>
+    <hasReclamation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec4"/>
+    </owl:NamedIndividual>
+   <!-- to addd -->
+     
+        <!-- to addd -->
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reponse"/>
+        <content> cinquième réclamation en cours de traitement  </content>
+    <hasReclamation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec5"/>
+    </owl:NamedIndividual>
+   <!-- to addd -->
+     <!-- to addd -->
+        <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#resp6">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Reponse"/>
+        <content> sixième réclamation traité d'accord  </content>
+    <hasReclamation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec6"/>
+    </owl:NamedIndividual>
+   <!-- to addd -->
 
     <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#sarra -->
 

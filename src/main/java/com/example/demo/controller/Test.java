@@ -20,7 +20,7 @@ import com.example.demo.tools.JenaEngine;
 //import com.example.demo.tools.JenaEngine;
 
 
- 
+
 
 
 
@@ -72,12 +72,12 @@ public class Test {
         return j.getJSONObject("results").getJSONArray("bindings").toString();
 
     }
- 
- 
- 
-	
-	
- 
+
+
+
+
+
+
 
 
 }
