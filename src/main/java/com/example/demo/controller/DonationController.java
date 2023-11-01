@@ -2,13 +2,11 @@ package com.example.demo.controller;
 
 import org.apache.jena.query.*;
 import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.util.FileManager;
 import org.json.JSONArray;
 import org.json.JSONObject;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/troc")
@@ -105,6 +103,83 @@ public class DonationController {
             resultArray.put(eventObject);
         }
 
+        return resultArray.toString();
+    }
+
+    @GetMapping("/donationsByAmount")
+    public String getDonationsByAmount(@RequestParam("amount") float minAmount) {
+        String ontologyFile = "data/sem.owl"; // Remplacez par le chemin réel de votre fichier d'ontologie
+        String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" +  // Ajoutez la déclaration du préfixe xsd
+                "SELECT ?donation ?Donation_Amount ?Donor ?Donation_Date ?note\n" +
+                "WHERE {\n" +
+                "  ?donation rdf:type ns:donation .\n" +
+                "  ?donation ns:Donation_Amount ?Donation_AmountStr .\n" +  // Utilisez une variable différente pour la valeur de chaîne
+                "  BIND (xsd:float(?Donation_AmountStr) AS ?Donation_Amount) .\n" +
+                "  ?donation ns:Donor ?Donor .\n" +
+                "  ?donation ns:note ?note .\n" +
+                "  ?donation ns:Donation_Date ?Donation_Date .\n" +
+                "  FILTER (?Donation_Amount > " + minAmount + ") .\n" +
+                "}";
+
+        Model model = FileManager.get().loadModel(ontologyFile);
+        Query query = QueryFactory.create(sparqlQuery);
+        QueryExecution qexec = QueryExecutionFactory.create(query, model);
+        ResultSet results = qexec.execSelect();
+
+        JSONArray resultArray = new JSONArray();
+        while (results.hasNext()) {
+            QuerySolution solution = results.nextSolution();
+            JSONObject donationObject = new JSONObject();
+            donationObject.put("Donation_Amount", solution.get("Donation_Amount").toString());
+            donationObject.put("Donor", solution.get("Donor").toString());
+            donationObject.put("note", solution.get("note").toString());
+            donationObject.put("Donation_Date", solution.get("Donation_Date").toString());
+            resultArray.put(donationObject);
+        }
+        return resultArray.toString();
+    }
+
+    @GetMapping("/donationsByYear")
+    public String getDonationsByYear(@RequestParam("year") int targetYear) {
+        String ontologyFile = "data/sem.owl";
+        String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>\n" +
+                "SELECT ?donation ?Donation_Amount ?Donor ?Donation_Date ?note\n" +
+                "WHERE {\n" +
+                "  ?donation rdf:type ns:donation .\n" +
+                "  ?donation ns:Donation_Amount ?Donation_Amount .\n" +
+                "  ?donation ns:Donor ?Donor .\n" +
+                "  ?donation ns:note ?note .\n" +
+                "  ?donation ns:Donation_Date ?Donation_DateString .\n" +
+                "  BIND (strbefore(?Donation_DateString, '/') AS ?dayMonth) .\n" +
+                "  BIND (xsd:integer(strafter(strafter(?Donation_DateString, '/'), '/')) AS ?year) .\n" +
+                "  FILTER (?year = " + targetYear + ") .\n" +
+                "}";
+
+        Model model = FileManager.get().loadModel(ontologyFile);
+        Query query = QueryFactory.create(sparqlQuery);
+        QueryExecution qexec = QueryExecutionFactory.create(query, model);
+        ResultSet results = qexec.execSelect();
+
+        JSONArray resultArray = new JSONArray();
+        while (results.hasNext()) {
+            QuerySolution solution = results.nextSolution();
+            JSONObject donationObject = new JSONObject();
+            donationObject.put("Donation_Amount", solution.get("Donation_Amount").toString());
+            donationObject.put("Donor", solution.get("Donor").toString());
+            donationObject.put("note", solution.get("note").toString());
+
+            // Obtenir la vraie valeur de Donation_Date si elle est disponible
+            if (solution.contains("Donation_Date")) {
+                RDFNode donationDateNode = solution.get("Donation_Date");
+                donationObject.put("Donation_Date", donationDateNode.toString());
+            }
+
+            resultArray.put(donationObject);
+        }
         return resultArray.toString();
     }
 }
