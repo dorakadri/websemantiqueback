@@ -1072,6 +1072,7 @@
         <postimage>https://ronixtools.com/en/blog/wp-content/uploads/2021/03/Learn-how-to-make-a-simple-wooden-table-at-home1.jpg</postimage>
         <PostDescription>i want to exchange this wooden table
 </PostDescription>
+
         <date>16/10/2023</date>
         <id>2</id>
         <title>wooden table
@@ -1187,6 +1188,7 @@
         <hasComment rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment1"/>
         <isCommenton rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#post_form"/>
     </owl:NamedIndividual>
+
 
 
 

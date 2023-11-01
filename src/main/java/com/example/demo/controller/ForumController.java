@@ -22,7 +22,7 @@ import com.example.demo.tools.JenaEngine;
 @RestController
 
 @RequestMapping("/troc")
-@CrossOrigin(origins = "http://localhost:3001")
+@CrossOrigin("http://localhost:5173")
 public class ForumController {
 
 
@@ -116,6 +116,51 @@ public class ForumController {
 
         return resultArray.toString();
     }
+
+    @GetMapping("/search/forum/{title}")
+    public String getForumPostsByTitle(@PathVariable(value = "title") String title) {
+        String ontologyFile = "data/sem.owl";
+
+        String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
+                "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
+                "SELECT ?Forumpost ?PostDescription ?postimage ?title ?hasCommentContent\n" +
+                "WHERE {\n" +
+                "  ?Forumpost rdf:type ns:Object .\n" +
+                "  ?Forumpost ns:PostDescription ?PostDescription .\n" +
+                "  ?Forumpost ns:postimage ?postimage .\n" +
+                "  ?Forumpost ns:title ?title .\n" +
+                "  OPTIONAL {\n" +
+                "    ?Forumpost ns:hasComment ?hasComment .\n" +
+                "    ?hasComment ns:content ?hasCommentContent .\n" +
+                "  }\n" +
+                "  FILTER (str(?title) = '" + title + "') .\n" +
+                "}";
+
+        Model model = FileManager.get().loadModel(ontologyFile);
+        Query query = QueryFactory.create(sparqlQuery);
+        QueryExecution qexec = QueryExecutionFactory.create(query, model);
+        ResultSet results = qexec.execSelect();
+
+        JSONArray resultArray = new JSONArray();
+        while (results.hasNext()) {
+            QuerySolution solution = results.nextSolution();
+            JSONObject ForumpostObject = new JSONObject();
+
+            ForumpostObject.put("PostDescription", solution.get("PostDescription").toString());
+            ForumpostObject.put("postimage", solution.get("postimage").toString());
+            ForumpostObject.put("title", solution.get("title").toString());
+
+            // Check if there are comments for this post
+            if (solution.contains("hasCommentContent")) {
+                ForumpostObject.put("hasCommentContent", solution.get("hasCommentContent").toString());
+            }
+
+            resultArray.put(ForumpostObject);
+        }
+
+        return resultArray.toString();
+    }
+
 
 
 }
