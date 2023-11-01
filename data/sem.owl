@@ -92,6 +92,7 @@
         <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AssociationOwner"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Events"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#SimpleUser"/>
     </owl:ObjectProperty>
 
 
@@ -420,6 +421,7 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Organizer">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AssociationOwner"/>
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Event"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#SimpleUser"/>
     </owl:DatatypeProperty>
 
 
@@ -748,15 +750,15 @@
     <owl:Class rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#AnnoncePost">
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#exchangeFor"/>
-                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#ExchangeType"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#has_exchanger"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Person"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </owl:equivalentClass>
         <owl:equivalentClass>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#has_exchanger"/>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Person"/>
-                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#exchangeFor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#ExchangeType"/>
             </owl:Restriction>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Post"/>
@@ -1044,6 +1046,40 @@
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent1">
         <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvents"/>
+        <Organizer>sarra</Organizer>
+        <Event_Description>An event for those interested in exchanging furniture and home decor items.</Event_Description>
+        <Participants>3</Participants>
+        <Event_Date>2023-10-31T14:30:00</Event_Date>
+        <location>bizerte</location>
+        <Event_Name>Furniture Swap</Event_Name>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvents"/>
+        <Participants>3</Participants>
+        <location>bizerte</location>
+        <Event_Date>2023-12-03T14:30:00</Event_Date>
+        <Event_Name>Eco-Friendly Fashion</Event_Name>
+        <Organizer>ahmed</Organizer>
+        <Event_Description>Promoting sustainable fashion by trading clothing, shoes, and accessories.</Event_Description>
+    </owl:NamedIndividual>
+
+
+
+    <!-- http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvents"/>
+        <location>tunis</location>
+        <Organizer>eya</Organizer>
+        <Participants>3</Participants>
+        <Event_Name>Book Lover&apos;s Gathering</Event_Name>
+        <Event_Date>2023-12-27T17:30:00</Event_Date>
+        <Event_Description>Calling all book enthusiasts! Join us for an evening of literary camaraderie at our event.</Event_Description>
     </owl:NamedIndividual>
 
 
@@ -1057,8 +1093,11 @@
         <birthdate>20/09/1998</birthdate>
         <phonenum>22637464</phonenum>
         <id>3</id>
+        <Participants>3</Participants>
         <lastname>benghbila</lastname>
         <password>1234</password>
+        <create_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent2"/>
+        <particiapate_to rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent3"/>
         <makesDonation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#donation1"/>
     </owl:NamedIndividual>
 
@@ -1152,6 +1191,8 @@
         <phonenum>50405040</phonenum>
         <has_claims rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Rec1"/>
         <particiapate_to rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent1"/>
+        <particiapate_to rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent2"/>
+        <create_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent3"/>
         <makesDonation rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#donation1"/>
     </owl:NamedIndividual>
 
@@ -1213,6 +1254,7 @@
         <lastname>harguem</lastname>
         <profileimage>sarra.png
 </profileimage>
+        <create_an rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#RegularEvent1"/>
         <has_transaction rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#eya"/>
         <offer_exchange rdf:resource="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
     </owl:NamedIndividual>
@@ -1238,12 +1280,18 @@
      -->
 
     <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
-        <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#makesDonation"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#particiapate_to"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#receivesDonation"/>
-        </owl:members>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce1"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
+        </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
@@ -1256,23 +1304,17 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDifferent"/>
         <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#Object1"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
-        </owl:distinctMembers>
-    </rdf:Description>
-    <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment1"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#comment2"/>
         </owl:distinctMembers>
     </rdf:Description>
     <rdf:Description>
-        <rdf:type rdf:resource="&owl;AllDifferent"/>
-        <owl:distinctMembers rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#annonce1"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#service1"/>
-        </owl:distinctMembers>
+        <rdf:type rdf:resource="&owl;AllDisjointProperties"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#makesDonation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#particiapate_to"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#receivesDonation"/>
+        </owl:members>
     </rdf:Description>
 </rdf:RDF>
 
