@@ -21,7 +21,7 @@ import com.example.demo.tools.JenaEngine;
 @RestController
 
 @RequestMapping("/event")
-@CrossOrigin(origins = "http://127.0.0.1:5173")
+@CrossOrigin("http://localhost:5173")
 public class EventController {
     @GetMapping("/regularEvents")
     public String getRegularEvents() {

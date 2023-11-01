@@ -11,14 +11,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/troc")
-@CrossOrigin(origins = "http://127.0.0.1:5173")
+@CrossOrigin("http://localhost:5173")
 
 public class AssociationController {
 
 
     @GetMapping("/associations")
     public String getAssociations() {
-        String ontologyFile = "data/sem.owl"; // Replace with the actual path to your ontology file
+        String ontologyFile = "data/sem.owl";
         String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "SELECT ?association ?Associationdescription ?id ?email ?profileimage ?Association_adress ?Association_status ?phonenum ?Association_name ?belongs_to_an\n" +
@@ -38,19 +38,18 @@ public class AssociationController {
 
         Model model = FileManager.get().loadModel(ontologyFile);
 
-        // Create a QueryExecution to execute the SPARQL query
+
         Query query = QueryFactory.create(sparqlQuery);
         QueryExecution qexec = QueryExecutionFactory.create(query, model);
 
-        // Execute the query and get the results
+
         ResultSet results = qexec.execSelect();
 
-        // Convert the ResultSet to JSON
         JSONArray resultArray = new JSONArray();
         while (results.hasNext()) {
             QuerySolution solution = results.nextSolution();
             JSONObject associationObject = new JSONObject();
-            // Retrieve and add individual attributes to the JSON structure
+
             associationObject.put("Associationdescription", solution.get("Associationdescription").toString());
             associationObject.put("id", solution.get("id").toString());
             associationObject.put("email", solution.get("email").toString());
@@ -72,7 +71,7 @@ public class AssociationController {
 
     @GetMapping("AssociationOwner")
     public String getAssociationOwnerInfo(){
-        String ontologyFile = "data/sem.owl"; // Replace with the actual path to your ontology file
+        String ontologyFile = "data/sem.owl";
 
         String sparqlQuery=" PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
@@ -94,19 +93,19 @@ public class AssociationController {
 
         Model model = FileManager.get().loadModel(ontologyFile);
 
-        // Create a QueryExecution to execute the SPARQL query
+
         Query query = QueryFactory.create(sparqlQuery);
         QueryExecution qexec = QueryExecutionFactory.create(query, model);
 
-        // Execute the query and get the results
+
         ResultSet results = qexec.execSelect();
 
-        // Convert the ResultSet to JSON
+
         JSONArray resultArray = new JSONArray();
         while (results.hasNext()) {
             QuerySolution solution = results.nextSolution();
             JSONObject OwnerObject = new JSONObject();
-            // Retrieve and add individual attributes to the JSON structure
+
             OwnerObject.put("role", solution.get("role").toString());
             OwnerObject.put("birthdate", solution.get("birthdate").toString());
             OwnerObject.put("owner_id", solution.get("owner_id").toString());
@@ -127,7 +126,7 @@ public class AssociationController {
 
     @GetMapping("/AssociationOwnerby/{belongs_to_an}")
     public ResponseEntity<String> getAssociationOwnerInfoByAssociation(@PathVariable("belongs_to_an") String belongs_to_an) {
-        String ontologyFile = "data/sem.owl"; // Replace with the actual path to your ontology file
+        String ontologyFile = "data/sem.owl";
         String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
                 "SELECT ?association ?Associationdescription ?id ?Association_status ?email ?profileimage ?phonenum ?Association_name \n" +
                 "WHERE {\n" +
@@ -171,7 +170,7 @@ public class AssociationController {
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred");
         } finally {
-            // Make sure to close resources (e.g., QueryExecution)
+
             qexec.close();
         }
     }

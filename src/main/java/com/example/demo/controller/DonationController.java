@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/troc")
-@CrossOrigin(origins = "http://127.0.0.1:5173")
+@CrossOrigin("http://localhost:5173")
 public class DonationController {
 
     @GetMapping("/donations")
     public String getDonations() {
-        String ontologyFile = "data/sem.owl"; // Remplacez par le chemin réel de votre fichier d'ontologie
+        String ontologyFile = "data/sem.owl";
         String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "SELECT ?donation ?Donation_Amount ?Donor ?Donation_Date ?note\n" +
@@ -49,7 +49,7 @@ public class DonationController {
 
     @GetMapping("/charityevents")
     public String getCharityEvents() {
-        String ontologyFile = "data/sem.owl"; // Remplacez par le chemin réel de votre fichier d'ontologie
+        String ontologyFile = "data/sem.owl";
         String sparqlQuery = "PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>\n" +
                 "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\n" +
                 "SELECT ?CharityEvent ?Target_Fundraising_Goal ?Event_Description ?Participants ?Organizer ?Event_Date ?Donations_Received ?Event_Name ?receivesDonation\n" +
@@ -82,9 +82,9 @@ public class DonationController {
             eventObject.put("Donations_Received", solution.get("Donations_Received").toString());
             eventObject.put("Event_Name", solution.get("Event_Name").toString());
 
-            // Extract donation details using the "receivesDonation" URL
+
             String donationURL = solution.get("receivesDonation").toString();
-            // Execute a new SPARQL query to get donation details
+
             String donationQuery ="PREFIX ns: <http://www.semanticweb.org/user/ontologies/2023/9/TrocAPP-14#>" +
                     "SELECT ?Donation_Amount ?Donor ?Donation_Date ?note " +
                     "WHERE { <" + donationURL + "> ns:Donation_Amount ?Donation_Amount . " +
